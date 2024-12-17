@@ -1,0 +1,44 @@
+{% extends "base_blog_plays.html" %}
+
+{% block title %} Perfil {% endblock title %}
+
+{% load static %}
+
+{% block content %}
+    
+    <main class="main-profile">
+        <section class="profile">
+            <div class="profile-img">
+                <img src="{% static 'blog_plays/img/perfil.jpg' %}" alt="">
+            </div>    
+            <div class="profile-info">
+                <h2>Hola, mi nombre es Maria Victoria</h2>
+                <br>
+                <p>Soy apasionada de los videojuegos, y mi tiempo libre lo dedico principalmente a explorar mundos infinitos en Minecraft, a desatar combates épicos en Brawl Stars y a dominar las estrategias de League of Legends. Estos juegos me permiten desde construir y crear hasta competir en emocionantes batallas en equipo. Si te gusta la aventura, la acción y la estrategia, ¡seguro que nos encontramos en el mismo universo gamer!</p>
+                <br>
+                <p>¿Qué te atrae de Minecraft?</p>
+                <p>Encontrar recursos, construir casas y me encanta domesticar animales.</p>
+                <br>
+                <p>¿Cuál es tu personaje favorito en Brawl Stars?</p>
+                <p>8-bits, Emz, Leon, Barley, Surge, Darryl, Sam, Poco, Tara  y Juju. </p>
+                <br>
+                <p>¿Qué personajes prefieres jugar en League of Legends?</p>
+                <p>Kalista, Miss Fortune, Thresh, Vex, Morgana, Ashe, Jinx y Caitlyn.</p>
+            </div>           
+        </section>
+        <section class="project-container">
+            <h3>Juegos</h3>
+
+            {% for proyect in proyects  %}
+
+            <div class="project">
+                <h4> {{ proyect.title }} </h4>
+                <p>
+                    {{ proyect.desc }}
+                </p>
+            </div>
+
+            {% endfor %}
+           
+{% endblock content %}
+    

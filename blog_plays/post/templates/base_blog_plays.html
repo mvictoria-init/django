@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+{% load static %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock title %} - Mvicty</title>
+
+        <link rel="stylesheet" href="{% static 'blog_plays/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'blog_plays/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog_plays/css/media-query.css' %}">
+        <link rel="shortcut icon" href="{% static 'blog_plays/img/logo.ico' %}" type="image/x-icon">
+    </head>
+
+    <body {% block class %}{% endblock class %}>
+
+        <header class="header">
+            <div class="social">
+                <div class="social-icons">
+                    <a href="https://github.com/mvictoria-init"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mar%C3%ADa-victoria-bastardo-guerra-bb9879120/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/mvv1ctoria/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <div class="nav-logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'blog_plays/img/logo.png' %}" alt="Logo de la Pagina">
+                    </a>
+                </div>
+                <div class="nav-link">
+                    <a href="{% url 'profile' %}">Sobre mí</a>
+                </div>
+            </nav>
+        </header>
+
+    {% block content %}
+    
+    {% endblock content %}
+
+    {% block footer %}
+    
+        <footer>
+            <p>Copyright &copy; Maria Victoria Bastardo 2024 - Contenido generado con IA</p>
+        </footer>
+
+    {% endblock footer %}
+
+    <script src="https://kit.fontawesome.com/4f7fe8753e.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
