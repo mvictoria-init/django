@@ -1,5 +1,5 @@
 """
-URL configuration for portfolio project.
+URL configuration for webpersonal project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -15,17 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, re_path
-
-from portfolio import settings
-from django.conf.urls.static import static
-from django.views.static import serve
+from django.urls import path, include
 
 urlpatterns = [
-    path('saborverde/',include('web_restaurant.urls')),
-    path('mvicty/',include('blog_plays.urls')),
-    path('fanghibli/',include('blog_ghibli.urls')),
-    path('admin/', admin.site.urls),
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    path('', include('blog_ghibli.fanghibli.urls')),
+    path('', include('blog_ghibli.movies.urls')),
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 
 from .forms import ContactForm
 
+from decouple import config
+
 # import to email with mailtrap.io
 from django.core.mail import EmailMessage
 
@@ -21,10 +23,10 @@ def contact(request):
             
             # create the content
             mail = EmailMessage(
-                "la Sabrosa: Nuevo mensaje de contacto", #asunto
-                "De {name} {mail} \n\nEscribió:\n\n {content}", #mensaje
+                "La Sabrosa: Nuevo mensaje de contacto", #asunto
+                f"De: {name} \nCorreo:{mail} \n\nEscribió:\n\n {content}", #mensaje
                 "lasabrosa.com", #email de origen
-                ["mvictoria@mailtrap.io"], #email de destino
+                [config('MICORREO')], #email de destino
                 reply_to=[mail],
             )
             

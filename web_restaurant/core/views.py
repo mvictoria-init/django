@@ -8,7 +8,7 @@ def history(request):
     return render(request, 'history.html')
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home_web_restaurant.html')
 
 def other(request, page_id):
     page = Page.objects.get(id = page_id)

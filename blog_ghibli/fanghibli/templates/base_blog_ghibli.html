@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+{% load static %}
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}{% endblock title %}</title> 
+	<link rel="stylesheet" href="{% static "blog_ghibli/css/bootstrap.min.css" %}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static "blog_ghibli/css/fontello.css" %}">
+	<link rel="stylesheet" href="{% static "blog_ghibli/css/styles.css" %}">
+	<link rel="shortcut icon" href="{% static "blog_ghibli/img/ponyo.ico" %}" type="image/x-icon">
+
+</head>
+
+<body>
+
+	<header>
+		<div class="container">
+			<!-- Logo Nombre y Menu -->
+			<div class="nav row rounded-top align-items-stretch justify-content-between">
+				<!-- Nombre de usuario -->
+				<div
+					class="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
+					<a class="nombre" href="{% url "movies" %}">Maria Victoria</a>
+					<samp class="icono icon-dot"></samp>
+					<p>Blog de peliculas de Ghibli</p>
+				</div>
+				<!-- Menu de navegación -->
+				<nav class="col-md-12 col-lg-auto menu d-flex align-items-stretch flex-wrap flex-sm-nowrap">
+					<a href="{% url "movies" %}" class="c-1 d-flex align-items-center">
+						<div class="d-flex flex-column text-center">
+							<span>Peliculas</span>
+							<i class="icono icon-briefcase"></i>
+						</div>
+					</a>
+					<a href="{% url "about_fan" %}" class="c-2 d-flex align-items-center">
+						<div class="d-flex flex-column text-center">
+							<span>Acerca de</span>
+							<i class="icono icon-user"></i>
+						</div>
+					</a>
+				</nav>
+			</div>
+
+        {% block slider %}{% endblock slider %}
+			
+		</div>
+	</header>
+
+<main>
+	{% block content %}{% endblock content %}
+</main>
+
+
+	<!--Pie de pagina -->
+	<footer>
+		<div class="container">
+			<div class="row redes-sociales justify-content-center">
+				<div class="col-auto">
+					<a href="https://www.linkedin.com/in/mar%C3%ADa-victoria-bastardo-guerra-bb9879120/" class="icono icon-mail mail"></a>
+					<a href="https://github.com/mvictoria-init" class="icono icon-briefcase briefcase"></a>
+					<a href="https://www.instagram.com/mvv1ctoria/" class="icono icon-instagram instagram"></a>
+				</div>
+				<div class="col-12 text-center copyright">
+					<samp>
+						<p>Copyright © Maria Victoria Bastardo 2024 - Contenido generado con IA </p>
+					</samp>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+	<script src="{% static "blog_ghibli/js/jquery-3.4.1.min.js" %}"></script>
+	<script src="{% static "blog_ghibli/js/popper.min.js" %}"></script>
+	<script src="{% static "blog_ghibli/js/bootstrap.min.js" %}"></script>
+	<script src="{% static "blog_ghibli/js/scripts.js" %}"></script>
+</body>
+
+</html>
