@@ -25,6 +25,7 @@ urlpatterns = [
     path('saborverde/',include('web_restaurant.urls')),
     path('mvicty/',include('blog_plays.urls')),
     path('fanghibli/',include('blog_ghibli.urls')),
+    path('',include('list_apps.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]

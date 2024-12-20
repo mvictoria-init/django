@@ -55,6 +55,9 @@ INSTALLED_APPS = [
     'blog_ghibli.fanghibli',
     'blog_ghibli.movies',
     
+    #list_apps
+    'list_apps',
+    
     #ckeditor
     'ckeditor',
 
