@@ -36,6 +36,11 @@ nav{
   justify-content:space-between;
   border-bottom: 10px solid #000;
 }
+nav .profile{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 nav div{
   margin-left: 20px;
   color: #000000;
